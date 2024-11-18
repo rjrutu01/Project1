@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Client</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    
+</head>
+<body>
+        <h3 style="margin-top: 10px;text-align: center;" >Read Project Information</h3>
+        <table class="table" style="margin-top: 50px;">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Client</th>
+                <th scope="col">Start Date </th>
+                <th scope="col">End Date</th>
+              </tr>
+            </thead>
+            {% for x in data %}
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>{{ x.name }}</td>
+                <td>{{ x.description }}</td>
+                <td>{{ x.client }}</td>
+                <td>{{ x.start_date }}</td>
+                <td>{{ x.end_date }}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+</body>
+</html>

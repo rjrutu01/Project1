@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Client</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <style>
+        
+        
+    </style>
+</head>
+<body>
+        <h3 style="margin-top: 10px;text-align: center;" >Read Client Information</h3>
+        <table class="table" style="margin-top: 50px;">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Delete client</th>
+                <th scope="col">Edit Information</th>
+              </tr>
+            </thead>
+            {% for x in data %}
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>{{ x.name }}</td>
+                <td>{{ x.email }}</td>
+                <td>{{ x.phone_number }}</td>
+                <td><a href="/delete_client/{{ x.id }}"><i class="fa-solid fa-trash-can"></i><span style="margin-left: 5px;">Delete</span></a></td>
+                <td><a href="/update_client/{{ x.id }}"><i class="fa-solid fa-arrows-rotate"></i><span style="margin-left: 5px;">Update</span></a></td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+</body>
+</html>

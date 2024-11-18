@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Register</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<style>
+    h3{
+        margin-top: 40px;
+        text-align: center;
+    }
+    .form{
+        height:300px;
+        padding: 2.5rem;
+        display: inline-grid;
+        border: 1px solid black;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border:transparent ;
+        background-color:#f0e8e0;
+        margin-left: 40%;
+        margin-top: 50px;
+       }
+       
+       .name1{
+        font-size: 2rem;
+        margin-top: 10%;
+        font-weight: 750;
+        color: azure;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+       }
+       #text{
+        border-radius: 1rem;
+        text-align: center;
+        margin: 3px;
+        border: transparent;
+        
+       }
+       #text1{
+        border-radius: 1rem;
+        text-align: center;
+        margin: 3px;
+        border: transparent;
+       
+       }
+       #text:hover,#text1:hover{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+       }
+       
+       .name{
+        display: flex;
+       }
+       #submit{
+            border-radius: 1rem;
+            border: transparent;
+            width: 300px;
+            
+            margin-top: 15px;
+            background-color: #56acff;
+       }
+       #submit:hover{
+        
+        box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+       }
+</style>
+<body>
+    <h3>Add Client Information</h3>
+    <form method="POST">
+        {%csrf_token %}
+        <div class="form">
+             
+            <input type="text" name='name' placeholder="Name " id="text1" >
+            <input type="email" name='email' placeholder="Email" id="text">
+            <input type="number" name='phone_number' placeholder="Phone no." id="text"></td>
+            <input type="submit" value="Add client" id="submit">
+        </div>
+    </form>
+</body>
+</html>
